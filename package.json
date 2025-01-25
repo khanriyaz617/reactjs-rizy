@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "React under the hood.",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "zest"
   },
   "keywords": [
@@ -19,7 +21,9 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-  "browserlist":{
-    "last 2 versions"
+  "browserslist": {
+    "defaults": [
+      "last 2 versions"
+    ]
   }
 }
