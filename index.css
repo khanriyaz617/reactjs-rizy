@@ -1,7 +1,46 @@
-#heading {
-    color: green;
+.header {
+    display: flex; 
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+.logo{
+    width: 120px;
 }
 
-.headingComponent {
-    color: rgb(203, 24, 188);
+.nav-items > ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 18px;
+    /* padding: 0px 10px; */
+}
+
+.nav-items > ul > li {
+    padding: 5px;
+    margin: 10px;
+}
+
+.res-card{
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border-radius: 3px;
+}
+
+.res-card:hover{
+    border: 2px solid black;
+    cursor: pointer;
+
+}
+
+.search{
+    padding: 10px;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.res-logo {
+    border-radius: 5px;
+    width: 100%;
 }
