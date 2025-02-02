@@ -1,66 +1,92 @@
 .header {
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
 }
-.logo{
+
+.logo {
     width: 120px;
 }
 
-.nav-items > ul {
+.nav-items>ul {
     display: flex;
     list-style-type: none;
     font-size: 18px;
     /* padding: 0px 10px; */
 }
 
-.nav-items > ul > li {
+.nav-items>ul>li {
     padding: 5px;
     margin: 10px;
 }
 
-.res-card{
+.res-card {
     padding: 10px;
     margin: 10px;
     width: 200px;
     border-radius: 3px;
 }
 
-.res-card:hover{
+.res-card:hover {
     border: 2px solid black;
     cursor: pointer;
 
 }
 
-.search{
+.search {
     padding: 10px;
 }
 
-.res-container{
+.res-container {
     display: flex;
     flex-wrap: wrap;
 }
+
 .res-logo {
     border-radius: 5px;
     width: 100%;
 }
 
-.filter{
+.filter {
     display: flex;
 }
-.filter-btn{
-    margin: 10px;;
+
+.filter-btn {
+    margin: 10px;
+    ;
     cursor: pointer;
 }
 
-.shimmer-container{
+.shimmer-container {
     display: flex;
     flex-wrap: wrap;
 }
+
 .shimmer-card {
     width: 200px;
     height: 370px;
     margin: 15px;
-    padding-left: 10px;;
+    padding-left: 10px;
+    ;
     background-color: #dddddd;
+}
+
+.about{
+    display: flex; 
+    flex-wrap: wrap;
+
+}
+.user-card {
+
+    width: 330px;
+    height: 300px;
+    margin: 15px;
+    padding-left: 10px;
+    border: 1px solid black;
+    background-color: #dddddd;
+}
+
+.user-card:hover {
+    border: 1px solid gray;
+    box-shadow: 10px 10px lightgray;
 }
