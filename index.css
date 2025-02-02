@@ -71,15 +71,15 @@
     background-color: #dddddd;
 }
 
-.about{
-    display: flex; 
+.about {
+    display: flex;
     flex-wrap: wrap;
 
 }
+
 .user-card {
 
-    width: 330px;
-    height: 300px;
+    width: 300px;
     margin: 15px;
     padding-left: 10px;
     border: 1px solid black;
@@ -89,4 +89,10 @@
 .user-card:hover {
     border: 1px solid gray;
     box-shadow: 10px 10px lightgray;
+}
+
+.user-img {
+    border: 2px solid black;
+    display: flex;
+    /* box-shadow: 10px 10px lightgray; */
 }
