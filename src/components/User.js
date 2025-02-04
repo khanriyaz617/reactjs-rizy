@@ -13,3 +13,4 @@ const User = ({ name, location }) => {
 };
 
 export default User;
+

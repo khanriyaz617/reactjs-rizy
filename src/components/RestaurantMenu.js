@@ -19,10 +19,9 @@ const RestaurantMenu = () => {
     const fetchMenu = await fetch(MENU_URL);
 
     const jsonRestData = await fetchMenu.json();
-    // setRestInfo(jsonRestData?.data?.cards[2]?.card?.card?.info)
     setRestInfo(jsonRestData);
   };
-  console.log("jsonRestData", restInfo);
+  
   const { id, name, areaName, avgRating, costForTwo, cuisines } =
     restInfo?.data?.cards[2]?.card?.card?.info || {};
 
