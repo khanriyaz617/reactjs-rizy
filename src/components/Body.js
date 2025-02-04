@@ -8,7 +8,6 @@ const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurantList, setFilteredRestaurantList] = useState([])
   const [listQuote, setListQuote] = useState([]);
-  const [searchText, setSearchText] = useState();
   console.log("I am in body");
 
   const quoteList = useEffect(() => {
@@ -55,29 +54,21 @@ const Body = () => {
             type="text"
             className="search-box"
             placeholder="Search Restaurant"
-            value={searchText}
             onChange={(e) => {
               console.log(`Search Text- ${e.target.value}`);
-              setSearchText(e.target.value);
-            }}
-          />
-          <button
-            onClick={() => {
               const searchedItems = restaurantList.filter((item) => {
-                return item.info.name.toLowerCase().includes(searchText.toLowerCase());  
+                return item.info.name.toLowerCase().includes(e.target.value.toLowerCase());  
               });
-              console.log("searchedItems", searchedItems)
+              // console.log("searchedItems", searchedItems)
               setFilteredRestaurantList(searchedItems)
             }}
-          >
-            Search
-          </button>
+          />
         </div>
         <button
           className="filter-btn"
           onClick={() => {
             const searchedRestaurantList = restaurantList.filter(
-              (item) => item.info.avgRatingString >= 4.4
+              (item) => item.info.avgRatingString >= 4.0
             );
             setFilteredRestaurantList(searchedRestaurantList);
           }}
