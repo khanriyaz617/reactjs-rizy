@@ -3,10 +3,11 @@ import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
-  const [filteredRestaurantList, setFilteredRestaurantList] = useState([])
+  const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
   const [listQuote, setListQuote] = useState([]);
   console.log("I am in body");
 
@@ -28,18 +29,21 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const resDataJSON = await resData.json();
-    console.log(
-      "resDataJSON",
-      resDataJSON?.data?.cards[4].card.card.gridElements.infoWithStyle
-        .restaurants
-    );
+ 
     const liveAPIData =
       resDataJSON?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
     setRestaurantList(liveAPIData);
-    setFilteredRestaurantList(liveAPIData)
+    setFilteredRestaurantList(liveAPIData);
   };
 
+  const onlineStatus = useOnlineStatus();
+
+  if(onlineStatus === false){
+    return (
+      <h1>Please check your internet connection.</h1>
+    )
+  }
   return restaurantList.length === 0 ? (
     <div>
       <Shimmer />
@@ -57,10 +61,12 @@ const Body = () => {
             onChange={(e) => {
               console.log(`Search Text- ${e.target.value}`);
               const searchedItems = restaurantList.filter((item) => {
-                return item.info.name.toLowerCase().includes(e.target.value.toLowerCase());  
+                return item.info.name
+                  .toLowerCase()
+                  .includes(e.target.value.toLowerCase());
               });
               // console.log("searchedItems", searchedItems)
-              setFilteredRestaurantList(searchedItems)
+              setFilteredRestaurantList(searchedItems);
             }}
           />
         </div>
